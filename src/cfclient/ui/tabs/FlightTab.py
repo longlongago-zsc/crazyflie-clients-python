@@ -552,60 +552,60 @@ class FlightTab(Tab, flight_tab_class):
         self.helper.cf.param.set_value("ring.headlightEnable", str(state))
 
     def _all_params_updated(self):
-        self._ring_populate_dropdown()
+        #self._ring_populate_dropdown()#ESPLane2.0
         self._populate_assisted_mode_dropdown()
 
-    def _ring_populate_dropdown(self):
-        try:
-            nbr = int(self.helper.cf.param.values["ring"]["neffect"])
-            current = int(self.helper.cf.param.values["ring"]["effect"])
-        except KeyError:
-            return
-
-        # Used only in alt1_updated function
-        self._ring_effect = current
-        self._ledring_nbr_effects = nbr
-
-        hardcoded_names = {0: "Off",
-                           1: "White spinner",
-                           2: "Color spinner",
-                           3: "Tilt effect",
-                           4: "Brightness effect",
-                           5: "Color spinner 2",
-                           6: "Double spinner",
-                           7: "Solid color effect",
-                           8: "Factory test",
-                           9: "Battery status",
-                           10: "Boat lights",
-                           11: "Alert",
-                           12: "Gravity",
-                           13: "LED tab",
-                           14: "Color fader",
-                           15: "Link quality"}
-
-        for i in range(nbr + 1):
-            name = "{}: ".format(i)
-            if i in hardcoded_names:
-                name += hardcoded_names[i]
-            else:
-                name += "N/A"
-            self._led_ring_effect.addItem(name, i)
-
-        self._led_ring_effect.currentIndexChanged.connect(
-            self._ring_effect_changed)
-
-        self._led_ring_effect.setCurrentIndex(current)
-        if int(self.helper.cf.param.values["deck"]["bcLedRing"]) == 1:
-            self._led_ring_effect.setEnabled(True)
-            self._led_ring_headlight.setEnabled(True)
+    # def _ring_populate_dropdown(self):
+    #     try:
+    #         nbr = int(self.helper.cf.param.values["ring"]["neffect"])
+    #         current = int(self.helper.cf.param.values["ring"]["effect"])
+    #     except KeyError:
+    #         return
+    #
+    #     # Used only in alt1_updated function
+    #     self._ring_effect = current
+    #     self._ledring_nbr_effects = nbr
+    #
+    #     hardcoded_names = {0: "Off",
+    #                        1: "White spinner",
+    #                        2: "Color spinner",
+    #                        3: "Tilt effect",
+    #                        4: "Brightness effect",
+    #                        5: "Color spinner 2",
+    #                        6: "Double spinner",
+    #                        7: "Solid color effect",
+    #                        8: "Factory test",
+    #                        9: "Battery status",
+    #                        10: "Boat lights",
+    #                        11: "Alert",
+    #                        12: "Gravity",
+    #                        13: "LED tab",
+    #                        14: "Color fader",
+    #                        15: "Link quality"}
+    #
+    #     for i in range(nbr + 1):
+    #         name = "{}: ".format(i)
+    #         if i in hardcoded_names:
+    #             name += hardcoded_names[i]
+    #         else:
+    #             name += "N/A"
+    #         self._led_ring_effect.addItem(name, i)
+    #
+    #     self._led_ring_effect.currentIndexChanged.connect(
+    #         self._ring_effect_changed)
+    #
+    #     self._led_ring_effect.setCurrentIndex(current)
+    #     # if int(self.helper.cf.param.values["deck"]["bcLedRing"]) == 1:#ESPlane
+    #     #     self._led_ring_effect.setEnabled(True)
+    #     #     self._led_ring_headlight.setEnabled(True)
 
     def _ring_effect_changed(self, index):
         self._ring_effect = index
         if index > -1:
             i = self._led_ring_effect.itemData(index)
             logger.info("Changed effect to {}".format(i))
-            if i != int(self.helper.cf.param.values["ring"]["effect"]):
-                self.helper.cf.param.set_value("ring.effect", str(i))
+            # if i != int(self.helper.cf.param.values["ring"]["effect"]):#ESPlane
+            #     self.helper.cf.param.set_value("ring.effect", str(i))
 
     def _ring_effect_updated(self, name, value):
         if self.helper.cf.param.is_updated:
@@ -619,23 +619,23 @@ class FlightTab(Tab, flight_tab_class):
         heightHoldPossible = False
         hoverPossible = False
 
-        if int(self.helper.cf.param.values["deck"]["bcZRanger"]) == 1:
-            heightHoldPossible = True
-            self.helper.inputDeviceReader.set_hover_max_height(1.0)
-
-        if int(self.helper.cf.param.values["deck"]["bcZRanger2"]) == 1:
-            heightHoldPossible = True
-            self.helper.inputDeviceReader.set_hover_max_height(2.0)
-
-        if int(self.helper.cf.param.values["deck"]["bcFlow"]) == 1:
-            heightHoldPossible = True
-            hoverPossible = True
-            self.helper.inputDeviceReader.set_hover_max_height(1.0)
-
-        if int(self.helper.cf.param.values["deck"]["bcFlow2"]) == 1:
-            heightHoldPossible = True
-            hoverPossible = True
-            self.helper.inputDeviceReader.set_hover_max_height(2.0)
+        # if int(self.helper.cf.param.values["deck"]["bcZRanger"]) == 1:#ESPlane
+        #     heightHoldPossible = True
+        #     self.helper.inputDeviceReader.set_hover_max_height(1.0)
+        #
+        # if int(self.helper.cf.param.values["deck"]["bcZRanger2"]) == 1:
+        #     heightHoldPossible = True
+        #     self.helper.inputDeviceReader.set_hover_max_height(2.0)
+        #
+        # if int(self.helper.cf.param.values["deck"]["bcFlow"]) == 1:
+        #     heightHoldPossible = True
+        #     hoverPossible = True
+        #     self.helper.inputDeviceReader.set_hover_max_height(1.0)
+        #
+        # if int(self.helper.cf.param.values["deck"]["bcFlow2"]) == 1:
+        #     heightHoldPossible = True
+        #     hoverPossible = True
+        #     self.helper.inputDeviceReader.set_hover_max_height(2.0)
 
         if not heightHoldPossible:
             self._assist_mode_combo.model().item(2).setEnabled(False)
