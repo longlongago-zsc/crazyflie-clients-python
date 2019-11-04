@@ -637,6 +637,9 @@ class FlightTab(Tab, flight_tab_class):
         #     hoverPossible = True
         #     self.helper.inputDeviceReader.set_hover_max_height(2.0)
 
+        heightHoldPossible = True
+        self.helper.inputDeviceReader.set_hover_max_height(2.0)
+
         if not heightHoldPossible:
             self._assist_mode_combo.model().item(2).setEnabled(False)
         else:
