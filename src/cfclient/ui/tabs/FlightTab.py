@@ -619,26 +619,23 @@ class FlightTab(Tab, flight_tab_class):
         heightHoldPossible = False
         hoverPossible = False
 
-        # if int(self.helper.cf.param.values["deck"]["bcZRanger"]) == 1:#ESPlane
+        # if int(self.helper.cf.param.values["deck"]["bcZRanger"]) == 1:
         #     heightHoldPossible = True
         #     self.helper.inputDeviceReader.set_hover_max_height(1.0)
-        #
-        # if int(self.helper.cf.param.values["deck"]["bcZRanger2"]) == 1:
-        #     heightHoldPossible = True
-        #     self.helper.inputDeviceReader.set_hover_max_height(2.0)
-        #
-        # if int(self.helper.cf.param.values["deck"]["bcFlow"]) == 1:
-        #     heightHoldPossible = True
-        #     hoverPossible = True
-        #     self.helper.inputDeviceReader.set_hover_max_height(1.0)
-        #
-        # if int(self.helper.cf.param.values["deck"]["bcFlow2"]) == 1:
-        #     heightHoldPossible = True
-        #     hoverPossible = True
-        #     self.helper.inputDeviceReader.set_hover_max_height(2.0)
 
-        heightHoldPossible = True
-        self.helper.inputDeviceReader.set_hover_max_height(2.0)
+        if int(self.helper.cf.param.values["deck"]["bcZRanger2"]) == 1:
+            heightHoldPossible = True
+            self.helper.inputDeviceReader.set_hover_max_height(2.0)
+
+        if int(self.helper.cf.param.values["deck"]["bcFlow"]) == 1:
+            heightHoldPossible = True
+            hoverPossible = True
+            self.helper.inputDeviceReader.set_hover_max_height(1.0)
+
+        if int(self.helper.cf.param.values["deck"]["bcFlow2"]) == 1:
+            heightHoldPossible = True
+            hoverPossible = True
+            self.helper.inputDeviceReader.set_hover_max_height(2.0)
 
         if not heightHoldPossible:
             self._assist_mode_combo.model().item(2).setEnabled(False)
