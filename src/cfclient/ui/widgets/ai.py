@@ -103,17 +103,20 @@ class AttitudeIndicator(QtWidgets.QWidget):
         # Draw the blue
         qp.setPen(QtGui.QColor(0, 61, 144))
         qp.setBrush(QtGui.QColor(0, 61, 144))
-        qp.drawRect(-w, h / 2, 3 * w, -3 * h)
+        rect = QtCore.QRectF(-w, h / 2, 3 * w, -3 * h)
+        qp.drawRect(rect)
 
         # Draw the marron
         qp.setPen(QtGui.QColor(59, 41, 39))
         qp.setBrush(QtGui.QColor(59, 41, 39))
-        qp.drawRect(-w, h / 2, 3 * w, 3 * h)
+        rect = QtCore.QRectF(-w, h / 2, 3 * w, 3 * h)
+        qp.drawRect(rect)
 
         pen = QtGui.QPen(QtGui.QColor(255, 255, 255), 1.5,
                          QtCore.Qt.SolidLine)
         qp.setPen(pen)
-        qp.drawLine(-w, h / 2, 3 * w, h / 2)
+        line = QtCore.QLineF(-w, h / 2, 3 * w, h / 2)
+        qp.drawLine(line)
 
         # Drawing pitch lines
         for ofset in [-180, 0, 180]:
@@ -136,9 +139,9 @@ class AttitudeIndicator(QtWidgets.QWidget):
                     length = 0.2 * w
                 else:
                     length = 0.1 * w
-
-                qp.drawLine((w / 2) - (length / 2), pos,
-                            (w / 2) + (length / 2), pos)
+                line = QtCore.QLineF((w / 2) - (length / 2), pos,
+                                    (w / 2) + (length / 2), pos)
+                qp.drawLine(line)
 
         qp.setWorldMatrixEnabled(False)
 
@@ -146,7 +149,8 @@ class AttitudeIndicator(QtWidgets.QWidget):
                          QtCore.Qt.SolidLine)
         qp.setBrush(QtGui.QColor(0, 0, 0))
         qp.setPen(pen)
-        qp.drawLine(0, h / 2, w, h / 2)
+        line = QtCore.QLineF(w / 2, 0, w / 2, h)
+        qp.drawLine(line)
 
         # Draw Hover vs Target
 
@@ -184,11 +188,14 @@ class AttitudeIndicator(QtWidgets.QWidget):
             # difference from target (moves up and down +- 2.8m)
             qp.drawText(w - fh * 3.8, pos_y + fh / 2, str(diff))
             # vertical line
-            qp.drawLine(w - fh * 4.5, 0, w - fh * 4.5, pos_y)
+            line = QtCore.QLineF(w - fh * 4.5, 0, w - fh * 4.5, pos_y)
+            qp.drawLine(line)
             # left horizontal line
-            qp.drawLine(w - fh * 4.7, 0, w - fh * 4.5, 0)
+            line = QtCore.QLineF(w - fh * 4.7, 0, w - fh * 4.5, 0)
+            qp.drawLine(line)
             # right horizontal line
-            qp.drawLine(w - fh * 4.2, pos_y, w - fh * 4.5, pos_y)
+            line = QtCore.QLineF(w - fh * 4.7, pos_y, w - fh * 4.5, pos_y)
+            qp.drawLine(line)
 
 
 if __name__ == "__main__":

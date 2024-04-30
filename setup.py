@@ -127,12 +127,12 @@ setup(
         ],
     },
 
-    install_requires=platform_requires + ['cflib>=0.1.8',
+    install_requires=platform_requires + ['cflib @ git+https://github.com/leeebo/crazyflie-lib-python.git',
                                           'appdirs>=1.4.0',
                                           'pyzmq',
                                           'pyqtgraph>=0.10',
                                           'PyYAML',
-                                          'quamash==0.6.1',
+                                          'quamash @ git+https://github.com/harvimt/quamash.git',
                                           'qtm>=2.0.2'],
 
     # List of dev and qt dependencies
@@ -141,7 +141,7 @@ setup(
     # $ pip install -e .[dev,qt5]
     extras_require={
         'dev': platform_dev_requires + [],
-        'qt5': ['PyQt5==5.9.2']
+        'qt5': ['PyQt5>=5.9.2']
     },
 
     package_data=package_data,

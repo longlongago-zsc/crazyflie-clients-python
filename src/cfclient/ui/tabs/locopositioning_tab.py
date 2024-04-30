@@ -38,8 +38,8 @@ import time
 from PyQt5 import uic
 from PyQt5.QtCore import Qt, pyqtSignal, QTimer
 from PyQt5.QtGui import QFont
-from PyQt5.QtGui import QMessageBox
-from PyQt5.QtGui import QLabel
+from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QLabel
 
 import cfclient
 from cfclient.ui.tab import Tab
@@ -471,7 +471,7 @@ class LocoPositioningTab(Tab, locopositioning_tab_class):
         self.is_loco_deck_active = False
 
         self._graph_timer = QTimer()
-        self._graph_timer.setInterval(1000 / self.FPS)
+        self._graph_timer.setInterval(int(1000 / self.FPS))
         self._graph_timer.timeout.connect(self._update_graphics)
         self._graph_timer.start()
 

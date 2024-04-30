@@ -552,7 +552,7 @@ class FlightTab(Tab, flight_tab_class):
         self.helper.cf.param.set_value("ring.headlightEnable", str(state))
 
     def _all_params_updated(self):
-        self._ring_populate_dropdown()
+        #self._ring_populate_dropdown()
         self._populate_assisted_mode_dropdown()
 
     def _ring_populate_dropdown(self):
@@ -604,8 +604,8 @@ class FlightTab(Tab, flight_tab_class):
         if index > -1:
             i = self._led_ring_effect.itemData(index)
             logger.info("Changed effect to {}".format(i))
-            if i != int(self.helper.cf.param.values["ring"]["effect"]):
-                self.helper.cf.param.set_value("ring.effect", str(i))
+            #if i != int(self.helper.cf.param.values["ring"]["effect"]):
+                #self.helper.cf.param.set_value("ring.effect", str(i))
 
     def _ring_effect_updated(self, name, value):
         if self.helper.cf.param.is_updated:
@@ -619,9 +619,9 @@ class FlightTab(Tab, flight_tab_class):
         heightHoldPossible = False
         hoverPossible = False
 
-        if int(self.helper.cf.param.values["deck"]["bcZRanger"]) == 1:
-            heightHoldPossible = True
-            self.helper.inputDeviceReader.set_hover_max_height(1.0)
+        # if int(self.helper.cf.param.values["deck"]["bcZRanger"]) == 1:
+        #     heightHoldPossible = True
+        #     self.helper.inputDeviceReader.set_hover_max_height(1.0)
 
         if int(self.helper.cf.param.values["deck"]["bcZRanger2"]) == 1:
             heightHoldPossible = True
