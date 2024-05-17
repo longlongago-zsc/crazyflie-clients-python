@@ -1,0 +1,125 @@
+INFO:cfclient.gui:Disabling STL printouts
+INFO:cfclient.utils.input.inputreaders:Input readers: ['linuxjsdev', 'pysdl2']
+INFO:cfclient.utils.input.inputreaders:Could not initialize [linuxjsdev]: Only supported on Linux
+INFO:cfclient.utils.input.inputreaders:Successfully initialized [pysdl2]
+INFO:cfclient.utils.input.inputinterfaces:Found interfaces: ['leapmotion', 'wiimote', 'zmqpull']
+INFO:cfclient.utils.input.inputinterfaces:Could not initialize [leapmotion]: Leap Motion library probably not installed (No module named 'leapsdk')
+INFO:cfclient.utils.input.inputinterfaces:Could not initialize [wiimote]: Missing cwiid (wiimote) driver No module named 'cwiid'
+INFO:cfclient.utils.config:Dist config read from d:\project\crazyflie-clients-python\src\cfclient/configs/config.json
+INFO:cfclient.utils.config:Config file read from [C:\Users\libo_\AppData\Local\Bitcraze\cfclient/config.json]
+INFO:cfclient.utils.input.inputinterfaces:Could not initialize [zmqpull]: ZMQ input disabled in config file
+INFO:cfclient.utils.zmq_param:Biding ZMQ for parameters at tcp://*:1213
+INFO:cfclient.utils.zmq_led_driver:Biding ZMQ for LED driverat tcp://*:1214
+INFO:cfclient.utils.input:Using device blacklist [(VirtualBox|VMware)]
+INFO:cfclient.ui.tabs.QualisysTab:Switching Flight Mode to: FlightModeStates.DISCONNECTED
+INFO:cfclient.ui.tabs.QualisysTab:Exception during qtm discovery: startTimer(self, interval: int, timerType: Qt.TimerType = Qt.CoarseTimer): argument 1 has unexpected type 'float'
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cflib.crazyflie:Callback->Connection initialized[udp://192.168.43.42]
+INFO:cflib.crazyflie:We are connected[udp://192.168.43.42], request connection setup
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cflib.crazyflie:Callback->Connected to [udp://192.168.43.42]
+INFO:cflib.crazyflie.platformservice:Procotol version: 4
+INFO:cflib.crazyflie.toc:TOC for port [5] found in cache
+INFO:cflib.crazyflie:Log TOC finished updating
+INFO:cflib.crazyflie.mem:0 memories found
+INFO:cflib.crazyflie:Memories finished updating
+INFO:cflib.crazyflie.toc:TOC for port [2] found in cache
+INFO:cflib.crazyflie:Param TOC finished updating
+INFO:cflib.crazyflie:Callback->Connection setup finished [udp://192.168.43.42]
+INFO:cfclient.utils.logconfigreader:Parsing [stabilizer.json]
+QObject::connect: Cannot queue arguments of type 'QList<QPersistentModelIndex>'
+(Make sure 'QList<QPersistentModelIndex>' is registered using qRegisterMetaType().)
+QObject::connect: Cannot queue arguments of type 'QList<QPersistentModelIndex>'
+(Make sure 'QList<QPersistentModelIndex>' is registered using qRegisterMetaType().)
+QObject::connect: Cannot queue arguments of type 'QList<QPersistentModelIndex>'
+(Make sure 'QList<QPersistentModelIndex>' is registered using qRegisterMetaType().)
+QObject::connect: Cannot queue arguments of type 'QList<QPersistentModelIndex>'
+(Make sure 'QList<QPersistentModelIndex>' is registered using qRegisterMetaType().)
+INFO:cfclient.ui.tabs.locopositioning_tab:Crazyflie connected to udp://192.168.43.42
+QObject::connect: Cannot queue arguments of type 'QList<QPersistentModelIndex>'
+(Make sure 'QList<QPersistentModelIndex>' is registered using qRegisterMetaType().)
+QObject::connect: Cannot queue arguments of type 'QList<QPersistentModelIndex>'
+(Make sure 'QList<QPersistentModelIndex>' is registered using qRegisterMetaType().)
+QObject::connect: Cannot queue arguments of type 'QList<QPersistentModelIndex>'
+(Make sure 'QList<QPersistentModelIndex>' is registered using qRegisterMetaType().)
+QObject::connect: Cannot queue arguments of type 'QList<QPersistentModelIndex>'
+(Make sure 'QList<QPersistentModelIndex>' is registered using qRegisterMetaType().)
+INFO:cflib.crazyflie.log:Have successfully started logging for id=1
+INFO:cflib.crazyflie.log:Have successfully started logging for id=3
+INFO:cflib.crazyflie.log:Have successfully started logging for id=4
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.ui.tabs.FlightTab:[imu_sensors.HMC5883L]: 0
+INFO:cfclient.ui.tabs.FlightTab:[imu_sensors.MS5611]: 0
+INFO:cflib.crazyflie.log:Have successfully started logging for id=5
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+QObject::connect: Cannot queue arguments of type 'QVector<int>'
+(Make sure 'QVector<int>' is registered using qRegisterMetaType().)
+QObject::connect: Cannot queue arguments of type 'QVector<int>'
+(Make sure 'QVector<int>' is registered using qRegisterMetaType().)
+QObject::setParent: Cannot set parent, new parent is in a different thread
+QBasicTimer::start: QBasicTimer can only be used with threads started with QThread
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Looking for devices
+INFO:cfclient.utils.input.inputreaders.pysdl2:Found 0 devices
+PS D:\project\crazyflie-clients-python>

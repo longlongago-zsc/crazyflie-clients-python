@@ -126,15 +126,15 @@ class AttitudeIndicator(QtWidgets.QWidget):
                     length = 0.35 * w
                     if i != 0:
                         if ofset == 0:
-                            qp.drawText((w / 2) + (length / 2) + (w * 0.06),
-                                        pos, "{}".format(-i / 10))
-                            qp.drawText((w / 2) - (length / 2) - (w * 0.08),
-                                        pos, "{}".format(-i / 10))
+                            point = QtCore.QPointF(w / 2 + (length / 2) + (w * 0.06), pos)
+                            qp.drawText(point, "{}".format(-i / 10))
+                            point = QtCore.QPointF(w / 2 - (length / 2) - (w * 0.08), pos)
+                            qp.drawText(point, "{}".format(-i / 10))
                         else:
-                            qp.drawText((w / 2) + (length / 2) + (w * 0.06),
-                                        pos, "{}".format(i / 10))
-                            qp.drawText((w / 2) - (length / 2) - (w * 0.08),
-                                        pos, "{}".format(i / 10))
+                            point = QtCore.QPointF(w / 2 + (length / 2) + (w * 0.06), pos)
+                            qp.drawText(point, "{}".format(i / 10))
+                            point = QtCore.QPointF(w / 2 - (length / 2) - (w * 0.08), pos)
+                            qp.drawText(point, "{}".format(i / 10))
                 elif i % 50 == 0:
                     length = 0.2 * w
                 else:
@@ -168,12 +168,13 @@ class AttitudeIndicator(QtWidgets.QWidget):
         qp.translate(0, h / 2)
         if not self.hover:
             # height
-            qp.drawText(w - fh * 10, fh / 2, str(round(self.hoverHeight, 2)))
+            point = QtCore.QPointF(w - fh * 10, fh / 2)
+            qp.drawText(point, str(round(self.hoverHeight, 2)))
 
         if self.hover:
             # target height (center)
-            qp.drawText(
-                w - fh * 10, fh / 2, str(round(self.hoverTargetHeight, 2)))
+            point = QtCore.QPointF(w - fh * 10, fh / 2)
+            qp.drawText(point, str(round(self.hoverTargetHeight, 2)))
             diff = round(self.hoverHeight - self.hoverTargetHeight, 2)
             pos_y = -h / 6 * diff
 
@@ -186,7 +187,8 @@ class AttitudeIndicator(QtWidgets.QWidget):
                 pos_y = -h / 6 * diff
 
             # difference from target (moves up and down +- 2.8m)
-            qp.drawText(w - fh * 3.8, pos_y + fh / 2, str(diff))
+            point = QtCore.QPointF(w - fh * 3.8, pos_y + fh / 2)
+            qp.drawText(point, str(diff))
             # vertical line
             line = QtCore.QLineF(w - fh * 4.5, 0, w - fh * 4.5, pos_y)
             qp.drawLine(line)
