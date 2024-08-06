@@ -33,8 +33,11 @@ import argparse
 import datetime
 
 import logging
+# try:
+#    from quamash import QSelectorEventLoop
+# except ImportError:
+from asyncqt import QEventLoop, QThreadExecutor
 
-from quamash import QSelectorEventLoop
 import cfclient
 
 __author__ = 'Bitcraze AB'
@@ -49,6 +52,7 @@ def main():
     all imports and exit verbosely if a library is not found. Disable outputs
     to stdout and start the GUI.
     """
+
 
     # Set ERROR level for PyQt5 logger
     qtlogger = logging.getLogger('PyQt5')
@@ -141,7 +145,7 @@ def main():
     app = QApplication(sys.argv)
 
     # Create and set an event loop that combines qt and asyncio
-    loop = QSelectorEventLoop(app)
+    loop = QEventLoop(app)
     asyncio.set_event_loop(loop)
 
     app.setWindowIcon(QIcon(cfclient.module_path + "/icon-256.png"))

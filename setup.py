@@ -49,9 +49,9 @@ def get_version():
 
     version = output.strip().decode("UTF-8")
 
-    if subprocess.call(["git", "diff-index", "--quiet", "HEAD"]) != 0:
-        version += "_modified"
-
+    # if subprocess.call(["git", "diff-index", "--quiet", "HEAD"]) != 0:
+    #    version += "_modified"
+    version = '2019.09'
     return version
 
 
@@ -140,7 +140,7 @@ setup(
     # $ pip install -e .[dev,qt5]
     extras_require={
         'dev': platform_dev_requires + [],
-        'qt5': ['PyQt5==5.9.2']
+        'qt5': ['PyQt5==5.15.9']
     },
 
     package_data=package_data,

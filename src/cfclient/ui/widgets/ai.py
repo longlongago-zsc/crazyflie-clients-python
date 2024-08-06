@@ -103,42 +103,42 @@ class AttitudeIndicator(QtWidgets.QWidget):
         # Draw the blue
         qp.setPen(QtGui.QColor(0, 61, 144))
         qp.setBrush(QtGui.QColor(0, 61, 144))
-        qp.drawRect(-w, h / 2, 3 * w, -3 * h)
+        qp.drawRect(-w, int(h / 2), int(3 * w), int(-3 * h))
 
         # Draw the marron
         qp.setPen(QtGui.QColor(59, 41, 39))
         qp.setBrush(QtGui.QColor(59, 41, 39))
-        qp.drawRect(-w, h / 2, 3 * w, 3 * h)
+        qp.drawRect(-w, int(h / 2), 3 * w, 3 * h)
 
         pen = QtGui.QPen(QtGui.QColor(255, 255, 255), 1.5,
                          QtCore.Qt.SolidLine)
         qp.setPen(pen)
-        qp.drawLine(-w, h / 2, 3 * w, h / 2)
+        qp.drawLine(-w, int(h / 2), 3 * w, int(h / 2))
 
         # Drawing pitch lines
         for ofset in [-180, 0, 180]:
             for i in range(-900, 900, 25):
-                pos = (((i / 10.0) + 25 + ofset) * h / 50.0)
+                pos = int(((i / 10.0) + 25 + ofset) * h / 50.0)
                 if i % 100 == 0:
                     length = 0.35 * w
                     if i != 0:
                         if ofset == 0:
-                            qp.drawText((w / 2) + (length / 2) + (w * 0.06),
+                            qp.drawText(int((w / 2) + (length / 2) + (w * 0.06)),
                                         pos, "{}".format(-i / 10))
-                            qp.drawText((w / 2) - (length / 2) - (w * 0.08),
+                            qp.drawText(int((w / 2) - (length / 2) - (w * 0.08)),
                                         pos, "{}".format(-i / 10))
                         else:
-                            qp.drawText((w / 2) + (length / 2) + (w * 0.06),
+                            qp.drawText(int((w / 2) + (length / 2) + (w * 0.06)),
                                         pos, "{}".format(i / 10))
-                            qp.drawText((w / 2) - (length / 2) - (w * 0.08),
+                            qp.drawText(int((w / 2) - (length / 2) - (w * 0.08)),
                                         pos, "{}".format(i / 10))
                 elif i % 50 == 0:
                     length = 0.2 * w
                 else:
                     length = 0.1 * w
 
-                qp.drawLine((w / 2) - (length / 2), pos,
-                            (w / 2) + (length / 2), pos)
+                qp.drawLine(int(w / 2) - int(length / 2), pos,
+                            int(w / 2) + int(length / 2), pos)
 
         qp.setWorldMatrixEnabled(False)
 
@@ -146,7 +146,7 @@ class AttitudeIndicator(QtWidgets.QWidget):
                          QtCore.Qt.SolidLine)
         qp.setBrush(QtGui.QColor(0, 0, 0))
         qp.setPen(pen)
-        qp.drawLine(0, h / 2, w, h / 2)
+        qp.drawLine(0, int(h / 2), w, int(h / 2))
 
         # Draw Hover vs Target
 
@@ -157,14 +157,14 @@ class AttitudeIndicator(QtWidgets.QWidget):
         qp.setBrush(QtGui.QColor(255, 255, 255))
         qp.setPen(pen)
         fh = max(7, h / 50)
-        font = QtGui.QFont('Sans', fh, QtGui.QFont.Light)
+        font = QtGui.QFont('Sans', (int)(fh), QtGui.QFont.Light)
         qp.setFont(font)
         qp.resetTransform()
 
         qp.translate(0, h / 2)
         if not self.hover:
             # height
-            qp.drawText(w - fh * 10, fh / 2, str(round(self.hoverHeight, 2)))
+            qp.drawText(int(w - fh * 10), int(fh / 2), str(round(self.hoverHeight, 2)))
 
         if self.hover:
             # target height (center)
@@ -175,11 +175,11 @@ class AttitudeIndicator(QtWidgets.QWidget):
 
             # cap to +- 2.8m
             if diff < -2.8:
-                pos_y = -h / 6 * -2.8
+                pos_y = int(-h / 6 * -2.8)
             elif diff > 2.8:
-                pos_y = -h / 6 * 2.8
+                pos_y = int(-h / 6 * 2.8)
             else:
-                pos_y = -h / 6 * diff
+                pos_y = int(-h / 6 * diff)
 
             # difference from target (moves up and down +- 2.8m)
             qp.drawText(w - fh * 3.8, pos_y + fh / 2, str(diff))

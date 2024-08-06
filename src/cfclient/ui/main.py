@@ -198,7 +198,8 @@ class MainUI(QtWidgets.QMainWindow, main_window_class):
         self._active_device = ""
         # self.configGroup = QActionGroup(self._menu_mappings, exclusive=True)
 
-        self._mux_group = QActionGroup(self._menu_inputdevice, exclusive=True)
+        self._mux_group = QActionGroup(self._menu_inputdevice)
+        self._mux_group.setExclusive(True)
 
         # TODO: Need to reload configs
         # ConfigManager().conf_needs_reload.add_callback(self._reload_configs)
@@ -375,7 +376,7 @@ class MainUI(QtWidgets.QMainWindow, main_window_class):
         self._all_mux_nodes = ()
 
         # Check which Input muxes are available
-        self._mux_group = QActionGroup(self._menu_inputdevice, exclusive=True)
+        self._mux_group = QActionGroup(self._menu_inputdevice)
         for m in self.joystickReader.available_mux():
             node = QAction(m.name,
                            self._menu_inputdevice,
