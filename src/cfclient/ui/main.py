@@ -762,7 +762,8 @@ class MainUI(QtWidgets.QMainWindow, main_window_class):
         for menu in self._all_role_menus:
             role_menu = menu["rolemenu"]
             mux_menu = menu["muxmenu"]
-            dev_group = QActionGroup(role_menu, exclusive=True)
+            dev_group = QActionGroup(role_menu)
+            dev_group.setExclusive(True)
             for d in devs:
                 dev_node = QAction(d.name, role_menu, checkable=True,
                                    enabled=True)
@@ -773,7 +774,8 @@ class MainUI(QtWidgets.QMainWindow, main_window_class):
                 map_node = None
                 if d.supports_mapping:
                     map_node = QMenu("    Input map", role_menu, enabled=False)
-                    map_group = QActionGroup(role_menu, exclusive=True)
+                    map_group = QActionGroup(role_menu)
+                    map_group.setExclusive(True)
                     # Connect device node to map node for easy
                     # enabling/disabling when selection changes and device
                     # to easily enable it

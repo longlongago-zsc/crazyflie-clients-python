@@ -49,9 +49,15 @@ def get_version():
 
     version = output.strip().decode("UTF-8")
 
-    # if subprocess.call(["git", "diff-index", "--quiet", "HEAD"]) != 0:
-    #    version += "_modified"
-    version = '2019.09'
+    if subprocess.call(["git", "diff-index", "--quiet", "HEAD"]) != 0:
+        version += "_modified"
+
+    dash_index = version.index('-')  # 找到第一个'-'的索引
+    # 截取第一个'-'之前的字符
+    before_dash = version[:dash_index]
+    if before_dash:
+        return before_dash
+
     return version
 
 
